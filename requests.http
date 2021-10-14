@@ -1,0 +1,39 @@
+GET http://localhost:3050/users
+
+###
+
+POST http://localhost:3050/users
+Content-Type: application/json
+
+{
+    "username": "Kumquat",
+    "password": "lahdbfdfg",
+    "thought": "user 3"
+}
+
+###
+
+DELETE http://localhost:3050/users
+
+###
+
+GET http://localhost:3050/users/615ef8f041175c4d588be182
+
+###
+
+// f.e. add a follower to a user
+POST http://localhost:3050/users/615eff4241175c4d588be18b/follow/615eff3041175c4d588be189
+Content-Type: application/json
+
+{
+    "followers": "615eff3041175c4d588be189"
+}
+
+###
+// f.e. update a user if they start following someone
+PATCH http://localhost:3050/users/615eff3041175c4d588be189
+Content-Type: application/json
+
+{
+    "follows": "615eff4241175c4d588be18b"
+}
